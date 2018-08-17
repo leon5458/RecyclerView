@@ -46,7 +46,6 @@ public class Recycler3Activity extends AppCompatActivity{
 
         recyclerView.setAdapter(adapter);
 
-
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

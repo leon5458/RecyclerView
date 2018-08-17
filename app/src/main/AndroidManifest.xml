@@ -22,6 +22,7 @@
         <activity android:name=".Recycler3Activity"/>
         <activity android:name=".DeleteActivity"/>
         <activity android:name=".GridActivity"/>
+        <activity android:name=".UpRecyclerviewActivity"/>
     </application>
 
 </manifest>

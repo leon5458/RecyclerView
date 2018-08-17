@@ -1,10 +1,12 @@
 package com.hly.recyclerview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +31,22 @@ public class GridActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycle);
 
         list = new ArrayList<String>();
-        for (int i=0;i<100;i++){
+        for (int i = 0; i < 100; i++) {
             list.add("");
         }
-        recyclerView.setLayoutManager(new GridLayoutManager(this,4));
-        ItemOffsetDecoration itemOffsetDecoration = new ItemOffsetDecoration(this,R.dimen.dp_5);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+        ItemOffsetDecoration itemOffsetDecoration = new ItemOffsetDecoration(this, R.dimen.dp_5);
         recyclerView.addItemDecoration(itemOffsetDecoration);
         adapter = new GridAdapter(list);
 
         recyclerView.setAdapter(adapter);
+
+
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GridActivity.this,UpRecyclerviewActivity.class));
+            }
+        });
     }
 }
